@@ -8,7 +8,7 @@ from scp import SCPClient
 LOG_FILE = "log.log"
 
 
-def get_app_config(app):
+def get_app_config(app: Flask) -> dict:
     logger = app.logger
 
     logger.debug("Loading config.yaml config")
@@ -16,7 +16,7 @@ def get_app_config(app):
         return yaml.safe_load(config)
 
 
-def get_logger():
+def get_logger() -> loguru_logger:
     loguru_logger.remove()
     loguru_logger.add(sys.stderr, colorize=True, format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <b>{message}</b>")
     loguru_logger.add(LOG_FILE, format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <b>{message}</b>")
@@ -24,7 +24,7 @@ def get_logger():
     return loguru_logger
 
 
-def create_flask_app(name: str):
+def create_flask_app(name: str) -> Flask:
     app = Flask(name)
     app.logger = get_logger()
     app.config.update(get_app_config(app=app))
@@ -35,7 +35,7 @@ def create_flask_app(name: str):
     return app
 
 
-def get_scp_client(host, port, username, password):
+def get_scp_client(host: str, port: int, username: str, password: str) -> SCPClient:
     client = paramiko.SSHClient()
     client.load_system_host_keys()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
