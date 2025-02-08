@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.file-input-label, .folder-input {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+.button {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+.button:hover {
+    background-color: black;
+    color: greenyellow;
+}
+.file-input-label:hover {
+    background-color: greenyellow;
+    color: black;
+}
+.file-input {
+    display: none;
+}
+.banner {
+    display: flex;
+    background-color: lightcoral;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border: 3px solid black;
+    border-radius: 12px;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+.folder-input {
+    padding: 15px 20px;
+    width: 300px;
+    text-align: center;
+    cursor: text;
+}
